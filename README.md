@@ -2,7 +2,7 @@
 
 Ce répertoire est un cours en Humanités Numériques qui présente tous les éléments nécessaires à la programmation d'un étiqueteur morphosyntaxique à partir de la ressource Morphalou en XQuery via le logiciel Basex. Le cours présente toutes les problématiques. 
 
-La Vidéo est duisponible ici et présente : 
+La Vidéo du cours est disponible ici (https://www.youtube.com/watch?v=JHtINEseALw) et présente : 
 
 - la manipulation de fichiers pour la création automatique de bases de données indexées
 - la création et la manipulation de la ressource Morphalou (Xpath et Adressage des données)
