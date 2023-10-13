@@ -1,5 +1,5 @@
 (:par X-L Salvador:)
-(:Etiquetage à partir de la ressource JSON produite par le script toJson:)
+(:Etiquetage à partir de la ressource JSON produite par le script convertAllToJson.xq:)
 (:On descend en dessous de 2 secondes:)
 
 let $doc := (json:doc("/Users/xavier-laurentsalvador/morphaloiu.json", map{"format":"xquery"}))
