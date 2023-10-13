@@ -1,7 +1,13 @@
-let $corpus := ft:tokenize(db:get-pre("terrelune2",0)//text())
+(:Programme réalisé par Xavier-Laurent Salvador :)
+(:pour le Master TILDE et ses étudiants:)
+
+let $nomBaseCorpus := "terrelune2" (:Le nom de la base textuelle créée:)
+let $morphalou := "Morphalou3.1_TEI" (:Le nom de votre base mrophalou:)
+
+let $corpus := ft:tokenize(db:get-pre($nomBaseCorpus,0)//text())
 
 let $m:= map:merge(
-  for $x at $n in db:get("Morphalou3.1_TEI")/TEI/text/body/entry 
+  for $x at $n in db:get($baseMorphalou)/TEI/text/body/entry 
    return
     map{$x/form[@type="lemma"]/orth/text() : $x/form[@type="inflected"]/orth/text()}
 )
