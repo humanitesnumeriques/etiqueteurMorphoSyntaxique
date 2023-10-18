@@ -4,7 +4,7 @@
 (:produit par mcIdenitifer.xq:)
 (:Juste parce que c'est beau:)
 
-declare variable $fichierMap := '/Users/xavier-laurentsalvador/basex/resMcMapTest.xml';
+declare variable $fichierMap := 'resMcMapTest.xml';
 declare variable $corpus:=db:get('terreLuneEtiquete')/db;
 
 for $idPhrases in  distinct-values(doc($fichierMap)//p[w]/@index)
