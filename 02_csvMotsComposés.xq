@@ -1,3 +1,4 @@
+(:Par Xavier-L. Salvador:)
 (:3 On crée le fichier des occurrences de mots composés:)
 (:contenues dans le texte lui-même:)
 (:10 seconde au lieu de 261639 ms:)
