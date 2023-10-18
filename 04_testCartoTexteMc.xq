@@ -24,7 +24,7 @@ for $idPhrases in  distinct-values(doc($fichierMap)//p[w]/@index)
             "size":$size, 
             "index":(ft:tokenize($w) ! xs:integer(.),',')[1],
             "w":tokenize($w),
-            "pos" : $m/@pos
+            "pos" : distinct-values(tokenize($m/@pos)[1])
             } 
            }
            , map {"duplicates":"combine"})
