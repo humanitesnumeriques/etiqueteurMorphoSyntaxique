@@ -16,13 +16,13 @@ for $idPhrases in  distinct-values(doc($fichierMap)//p[w]/@index)
     map:merge(
      for $m in doc($fichierMap)//p[w][@index=$idPhrases]
       let $src := $m/@src/data()
-      let $size := count(tokenize($m/@src/data())) 
+      let $size := count(ft:tokenize($m/@src/data())) 
        for $w in $m/w
         return 
          map {
            $src: map{
             "size":$size, 
-            "index":(tokenize($w) ! xs:integer(.),',')[1],
+            "index":(ft:tokenize($w) ! xs:integer(.),',')[1],
             "w":tokenize($w),
             "pos" : $m/@pos
             } 
