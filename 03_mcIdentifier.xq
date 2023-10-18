@@ -11,7 +11,7 @@ declare option ft-option "diacritics sensitive";
 declare variable $corpus := db:get("terreLuneEtiquete")/db/phrase;
 declare variable $corpusJoin := string-join($corpus//text(),' ');
 declare variable $bddMotsComp := db:get('motsComposes')/db/mc;
-declare variable $motscomp := file:read-text-lines('isteOccurrenceMCcandidats.txt');
+declare variable $motscomp := file:read-text-lines('listeOccurrenceMCcandidats.txt');
 (:148000 ms en partant du fichier qui se produit en une seconde, soit 2 minutes:)
 
 file:write(
