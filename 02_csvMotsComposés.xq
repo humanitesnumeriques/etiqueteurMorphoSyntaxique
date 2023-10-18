@@ -5,22 +5,19 @@
 (:puisqu'on va les trier dans l'étape d'après:)
 (:Ressources LDI ex UMR 7187:)
 
+declare variable $index:= index:texts("terreLuneEtiquete");
+declare variable $corpus := db:get('terreLune2')//text();
+declare variable $liste := db:get('motsComposes')/db/mc/@src;
 
-file:write
-('/Users/xavier-laurentsalvador/basex/listeOccurrenceMCcandidats.txt'
-,
-let $index:= index:texts("terreLuneEtiquete")
-let $corpus := db:get('terreLune2')//text()
-
-for $y in db:get('motsComposes')/db/mc/@src
- 
- where every $yy in ft:tokenize($y) satisfies $yy = $index
- 
-  return
-   $y/data()
-   ,
+ file:write(
+  '/Users/xavier-laurentsalvador/basex/listeOccurrenceMCcandidats.txt'
+  ,
+    for $y in $liste
+     where every $yy in ft:tokenize($y) satisfies $yy = $index
+      return
+       $y/data()
+    ,
     map {"method" : "basex"}
-    (:sinon, on a des retours à la ligne qui sautent:)
 ) 
   
   
