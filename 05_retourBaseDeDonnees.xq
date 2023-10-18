@@ -4,7 +4,6 @@
 (:produit par mcIdenitifer.xq :)
 
 declare variable $fichierMap := 'resMcMapTest.xml';
-(:produit par mcIdentifier.xq:)
 declare variable $corpus:=db:get('terreLuneEtiquete')/db;
 
 let $phrases := (
@@ -39,9 +38,16 @@ let $size := xs:integer($map?*[?index=$m/@n]?size)
  if ($indice)
    then 
      let $size := (for $x in $map?*[?index=$m/@n]?size order by $x descending return $x)[1]
-     let $forme := string-join(for $a in (xs:integer($m/@n) to xs:integer($m/@n)+$size - 1) return $corpus/phrase[@index=$idPhrases]/mot[@n=$a]/text(),' ')
+     let $forme := string-join(for $a in (xs:integer($m/@n) to xs:integer($m/@n)+$size - 1) 
+                      return $corpus/phrase[@index=$idPhrases]/mot[@n=$a]/text(),' ')
      return 
-      <mot type="polylex" n="{$m/@n}" pos="{string-join($map?*[?index=$m/@n]?pos[1])}" mot="{$forme}" lemme="{$forme}">{$forme}</mot>
+      <mot type="polylex" 
+           n="{$m/@n}" 
+           pos="{string-join($map?*[?index=$m/@n]?pos[1])}" 
+           mot="{$forme}" 
+           lemme="{$forme}">
+            {$forme}
+    </mot>
      
     else if ($map?*?w=$m/@n)
       then ()
