@@ -1,3 +1,4 @@
+(:Par Xavier-L. Salvador:)
 (: 5_ Reconstruction du corpus:)
 (:à partir de rsMcMap.xml:)
 (:produit par mcIdenitifer.xq:)
