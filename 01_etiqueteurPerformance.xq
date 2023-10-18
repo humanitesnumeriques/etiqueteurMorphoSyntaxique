@@ -3,9 +3,10 @@
 (:On descend en dessous de 2 secondes:)
 
 declare option output:indent "yes";
-let $doc := (json:doc("/Users/xavier-laurentsalvador/morphaloiu.json", map{"format":"xquery"}))
+declare variable $doc := (json:doc("morphaloiu.json", map{"format":"xquery"}));
+declare variable $corpus := db:get("terrelune2")//text()
 
-for $x in ft:tokenize(db:get("terrelune2")//text(), map{"diacritics":"sensitive"})
+for $x in ft:tokenize($corpus, map{"diacritics":"sensitive"})
  return
   <m mot="{$x}" 
      pos="{$doc?$x?pos}" 
