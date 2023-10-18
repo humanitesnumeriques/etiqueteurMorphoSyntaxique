@@ -1,3 +1,4 @@
+(:Par Xavier-L. Salvador:)
 (:4: Sauver dans un fichier la cartographie des mots composés:)
 (:On part du corpus étiqueté et on va commencer à intégrer la liste des mots composés:)
 (: et des expressions polylexicales:)
