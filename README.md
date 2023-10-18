@@ -1,8 +1,9 @@
 # etiqueteurMorphoSyntaxique
 
-Ce répertoire est un cours en Humanités Numériques qui présente tous les éléments nécessaires à la programmation d'un étiqueteur morphosyntaxique à partir de la ressource Morphalou en XQuery via le logiciel Basex. Le cours présente toutes les problématiques. 
+
 ![etiqueteurProcess](https://github.com/humanitesnumeriques/etiqueteurMorphoSyntaxique/assets/28839416/74a52705-3628-41d8-b8c0-a9120f462e9a)
 
+Ce répertoire est un cours en Humanités Numériques qui présente tous les éléments nécessaires à la programmation d'un étiqueteur morphosyntaxique à partir de la ressource Morphalou en XQuery via le logiciel Basex. Le cours présente toutes les problématiques. 
 La Vidéo du cours est disponible ici (https://www.youtube.com/watch?v=JHtINEseALw) et présente : 
 
 - la manipulation de fichiers pour la création automatique de bases de données indexées
