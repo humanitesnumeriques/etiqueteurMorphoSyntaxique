@@ -1,8 +1,10 @@
 (: par Xavier-Laurent Salvador:)
 (: Extraction de patterns syntaxiques:)
 
+declare variable $corpus := db:get("terreLuneEtiqueteBis");
+(
 (:groupes prépositionnels:)
-for sliding window $w in //phrase/mot
+for sliding window $w in $corpus//phrase/mot
  start $a at $n 
    when $a/@pos contains text {'prép.'} 
    and 
@@ -16,7 +18,7 @@ return
   <w>{string-join($w/@mot/data(),' ')}</w>
 ,
 (:relatives:)
-for sliding window $w in //phrase/mot
+for sliding window $w in $corpus//phrase/mot
  start $a at $n 
     when $a/@mot contains text {"qui, que, quoi, dont, où"} 
     any word 
@@ -26,3 +28,4 @@ for sliding window $w in //phrase/mot
     where $m - $n gt 10
  return 
   <w>{string-join($w/@mot/data(),' ')}</w>
+)
