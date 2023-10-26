@@ -2,6 +2,9 @@
 (:On va utiliser les fonctions db:put-value:)
 (:pour stocker une version optimisée de la ressource en base de données:)
 (:Attention, un ebase appelée morphalouJson doit exister sur la machine au préalable:)
+(:Pour interroger la ressource c'est très simple:)
+(:-----------------------------------------------:)
+(:exemple: db:get-value('morphaloujson')?desc?mangeait:)
 
 
 declare option output:method "json";
